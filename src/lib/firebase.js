@@ -10,12 +10,12 @@ import { getFirestore } from "firebase/firestore";  // Firestore for storing rep
 import { getStorage } from "firebase/storage";  // Firebase Storage for storing images/videos
 
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",  // Fixed incorrect storage bucket URL
-    messagingSenderId: "",
-    appId: ""
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,  // Fixed incorrect storage bucket URL
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId
 };
 
 // Initialize Firebase
