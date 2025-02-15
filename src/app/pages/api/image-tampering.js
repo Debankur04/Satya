@@ -8,7 +8,7 @@ export default async function handler(req, res) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Token ${process.env.REPLICATE_API_KEY}`
+                'Authorization': `Token ${process.env.NEXT_PUBLIC_FIREBASE_REPLICATE_API_KEY}`
             },
             body: JSON.stringify({ input: { image: imageUrl } })
         });

@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     }
     try {
         const { videoUrl } = req.body;
-        const response = await fetch(`https://api-us.faceplusplus.com/facepp/v3/detect?api_key=${process.env.FACEPP_API_KEY}&api_secret=${process.env.FACEPP_API_SECRET}&image_url=${videoUrl}`, {
+        const response = await fetch(`https://api-us.faceplusplus.com/facepp/v3/detect?api_key=${process.env.NEXT_PUBLIC_FIREBASE_FACEPP_API_KEY}&api_secret=${process.env.NEXT_PUBLIC_FIREBASE_FACEPP_API_SECRET}&image_url=${videoUrl}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "No text provided!" });
     }
   
-    const HF_API_KEY = process.env.HUGGINGFACE_API_KEY;
+    const HF_API_KEY = process.env.NEXT_PUBLIC_FIREBASE_HUGGINGFACE_API_KEY;
     const HF_MODEL_URL = "https://api-inference.huggingface.co/models/your-distilbert-model";
   
     try {

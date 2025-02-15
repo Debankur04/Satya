@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Query parameter is required" });
     }
   
-    const API_KEY = process.env.GOOGLE_FACT_CHECK_API_KEY;
+    const API_KEY = process.env.NEXT_PUBLIC_FIREBASE_GOOGLE_FACT_CHECK_API_KEY;
     const url = `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${encodeURIComponent(query)}&key=${API_KEY}`;
   
     try {
