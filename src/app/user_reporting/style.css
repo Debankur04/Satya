@@ -1,4 +1,10 @@
-
+:root{
+  --primary: #1DB954;
+  --secondary: #212121;
+  --third : #121212;
+  --forth : #535353;
+  --fifth : #B3B3B3;
+}
     .container {
       max-width: 600px;
       margin: 2rem auto;

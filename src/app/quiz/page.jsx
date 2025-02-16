@@ -46,6 +46,7 @@ export default function QuizApp() {
   };
 
   return (
+    <div className='h-screen w-screen flex justify-center items-center bg-[#b3b3b3]'>
     <div className="container">
       <div className="tabs">
         <button 
@@ -154,6 +155,7 @@ export default function QuizApp() {
       )}
 
       
+    </div>
     </div>
   );
 }

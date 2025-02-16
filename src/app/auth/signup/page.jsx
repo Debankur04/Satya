@@ -39,7 +39,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
+    <div className="h-screen w-screen flex justify-center items-center bg-[#B3B3B3]">
       <div className="form-container">
         <p className="title">Create an Account</p>
         {error && <p className="error">{error}</p>}

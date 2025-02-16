@@ -1,7 +1,16 @@
+:root{
+    --primary: #1DB954;
+    --secondary: #212121;
+    --third : #121212;
+    --forth : #535353;
+    --fifth : #B3B3B3;
+}
+
 .container{      
 max-width: 1200px;
 margin: 0 auto;
 padding: 2rem;
+background: var(--fifth);
 }
 
 header {
@@ -11,7 +20,7 @@ margin-bottom: 3rem;
 
 header h1 {
 font-size: 2.5rem;
-color: #333;
+color: var(--secondary);
 margin-bottom: 0.5rem;
 }
 
@@ -24,7 +33,7 @@ display: flex;
 align-items: center;
 gap: 0.5rem;
 margin-bottom: 2rem;
-color: #333;
+color: var(--secondary);
 }
 
 .partners-grid {
@@ -73,7 +82,7 @@ text-align: center;
 
 .integration-card h3 {
 margin: 1rem 0;
-color: #333;
+color: var(--secondary);
 }
 
 .partnership-form {
@@ -88,7 +97,7 @@ margin-bottom: 1.5rem;
 label {
 display: block;
 margin-bottom: 0.5rem;
-color: #333;
+color: var(--secondary);
 }
 
 input, textarea {
@@ -105,7 +114,7 @@ resize: vertical;
 }
 
 button {
-background: #0066cc;
+background: var(--primary);
 color: white;
 padding: 0.75rem 1.5rem;
 border: none;
@@ -116,7 +125,7 @@ transition: background 0.3s;
 }
 
 button:hover {
-background: #0052a3;
+background: #1db954c4;
 }
 
 @media (max-width: 768px) {

@@ -49,13 +49,17 @@ export default function PartnershipPage() {
         <h2><Database size={24} /> How AI Uses This Data</h2>
         <div className="integration-cards">
           <div className="integration-card">
-            <FileCheck size={32} />
-            <h3>Verified Sources</h3>
+            <div className="flex justify-center">
+              <FileCheck size={24} />
+              <h3>Verified Sources</h3>
+            </div>
             <p>AI models trained on fact-checked data from trusted partners</p>
           </div>
           <div className="integration-card">
-            <Shield size={32} />
+          <div className="flex justify-center">
+            <Shield size={24} />
             <h3>Real-time Verification</h3>
+          </div>
             <p>Direct API integration for live fact-checking</p>
           </div>
         </div>

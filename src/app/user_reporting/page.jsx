@@ -32,6 +32,7 @@ export default function ReportSystem() {
   };
 
   return (
+    <div className="h-screen w-screen flex justify-center items-center bg-[#b3b3b3]">
     <div className="container">
       <form onSubmit={handleSubmit} className="report-form">
         <div className="input-group">
@@ -103,6 +104,7 @@ export default function ReportSystem() {
       </div>
 
       
+    </div>
     </div>
   );
 }
