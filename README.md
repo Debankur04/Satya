@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SatyaDrishti – AI-Powered Misinformation Detector
 
-## Getting Started
+🛡️ Detect Fake News, Deepfakes, and Misinformation Using AI
 
-First, run the development server:
+## 📌 Overview
+SatyaDrishti is an AI-powered tool designed to detect and combat misinformation in news articles, images, and videos. It integrates fact-checking APIs, deepfake detection models, and a Chrome extension to provide real-time verification of online content.
 
+### 🔹 Features
+- **Web App** – Enter news text, URLs, or upload images/videos for credibility analysis.
+- **Chrome Extension** – Flags fake news while browsing by changing site colors.
+- **AI-Based Analysis** – Uses NLP, OpenCV, and deep learning to detect misinformation.
+- **User Reporting System** – Allows users to report suspicious content.
+- **Gamified Learning** – Teaches users how to identify misinformation.
+
+### 🚀 Key Functionalities
+✅ Real-Time Fake News Detection (Text & URL-based verification)  
+✅ Fake Image & Deepfake Detection  
+✅ Trust Score System (🟥 Fake, 🟨 Likely Fake/True, 🟩 True)  
+✅ Chrome Extension (Detects misinformation while browsing)  
+✅ User Reporting System (Crowdsourced fact-checking)  
+✅ Gamified Learning (Earn points & learn misinformation detection)  
+✅ Fact-Checking API Integration (Google Fact Check, Snopes, PolitiFact)  
+
+---
+## 🔧 Tech Stack
+
+### **Frontend (Web App & Chrome Extension)**
+- **Next.js** – Web framework
+- **Chrome Extension** (Manifest V3 + Content Scripts)
+
+### **Backend (APIs & Data Processing)**
+- **Next.js** – Used to create API endpoints
+- **Vercel Serverless Functions** – Host API endpoints
+- **Firebase Firestore** – Store user-reported misinformation cases, videos, links, and reports
+- **PostgreSQL (Neon) + Prisma** – Store user information and game leaderboard
+
+### **AI & ML Models**
+- **DistilBERT (Hugging Face)** – Fake news classification
+- **OpenCV + ELA** – Fake image detection
+- **Google Reverse Image Search API** – Identify manipulated images
+- **FaceForensics++** – Deepfake video detection
+- **ResNet Audio Forensics** – AI-generated voice detection
+
+---
+## 🛠️ Installation & Setup
+
+### 🔹 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/debankur04/satyadrishti.git  
+cd satyadrishti  
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔹 2. Install Dependencies
+```bash
+npm install  
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 🔹 3. Set Up Environment Variables
+Create a `.env.local` file and add the required API keys:
+```env
+NEXT_PUBLIC_FIREBASE_APIKEY="your_api_key"
+NEXT_PUBLIC_FIREBASE_AUTHDOMAIN="your_api_key"
+NEXT_PUBLIC_FIREBASE_PROJECTID="your_api_key"
+NEXT_PUBLIC_FIREBASE_STORAGEBUCKET="your_api_key"
+NEXT_PUBLIC_FIREBASE_MESSAGINGSENDERID="your_api_key"
+NEXT_PUBLIC_FIREBASE_APPID="your_api_key"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+NEXT_PUBLIC_GOOGLE_FACT_CHECK_API_KEY="your_api_key"
+NEXT_PUBLIC_HUGGINGFACE_API_KEY="your_api_key"
+NEXT_PUBLIC_REVERSE_IMAGE_API_KEY="your_api_key"
+NEXT_PUBLIC_FACEFORENSICS_API_KEY="your_api_key"
+NEXT_PUBLIC_RESNET_AUDIO_API_KEY="your_api_key"
+```
 
-## Learn More
+### 🔹 4. Run the Development Server
+```bash
+npm run dev  
+```
+The project will be available at [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+---
+## 🌐 API Endpoints
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Endpoint                 | Method | Description                                        |
+|--------------------------|--------|----------------------------------------------------|
+| `/api/analyze_text`      | POST   | Detects fake news in text using AI                |
+| `/api/fact_check`        | GET    | Cross-checks news credibility with databases      |
+| `/api/deepfake`         | POST   | Detects deepfake videos using FaceForensics++    |
+| `/api/image-tampering`  | POST   | Identifies manipulated images using OpenCV + ELA  |
+| `/api/reverse_image`    | POST   | Performs Google Reverse Image Search             |
+| `/api/ai-image`         | POST   | AI-based fake image detection                     |
+| `/api/geturls`          | GET    | Retrieves stored URLs for analysis               |
+| `/api/storeurl`        | POST   | Saves URLs to Firestore/PostgreSQL               |
+| `/api/upload`          | POST   | Uploads images/videos for verification           |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
+## 🎯 How It Works
+1️⃣ User enters a news URL, text, or uploads an image/video  
+2️⃣ **SatyaDrishti** analyzes the content using AI models  
+3️⃣ Displays credibility score (**Red/Yellow/Green**)  
+4️⃣ Users can report suspicious content for fact-checking  
+5️⃣ Gamified learning module helps users improve misinformation detection skills  
 
-## Deploy on Vercel
+---
+## 🛠️ Future Enhancements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔹 **Multi-Language Support** – Fake news detection in Hindi, Spanish, etc.  
+🔹 **Social Media Integration** – Detect misinformation in Twitter, Facebook posts.  
+🔹 **Blockchain for Fact-Checking** – Immutable verification records.  
+🔹 **AI Chatbot for News Verification** – Users can ask AI if news is real or fake.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+## 🤝 Contributing
+We welcome contributions! 🚀  
+
+1. Fork the repo  
+2. Create a feature branch:  
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:  
+   ```bash
+   git commit -m "Added feature"
+   ```
+4. Push to your branch:  
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a Pull Request  
+
+---
+## 📜 License
+This project is licensed under the **MIT License**.
+
+---
+## 💡 Authors & Acknowledgments
+**Team Ashwamedh**  
+Built for **Exabyte**  
+**Team Members:**  
+- **Debankur Dutta**  
+- **Anuska Kapuria**  
+- **Shinjan Kundu**  
+
+🙏 **Thank You!**  
+If you like this project, ⭐ star the repo and share it! 🚀
+
