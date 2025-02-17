@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import "./style.css";
 import { Search, ArrowRight, AlertCircle } from 'lucide-react';
 
@@ -30,15 +31,11 @@ export default function Home() {
       <header>
         <div className="logo">
           <AlertCircle size={24} />
-          <span>TruthSeeker</span>
+          <span>Satya</span>
         </div>
         <nav>
-          <a href="/" className="active">Home</a>
-          <a href="/main_page">Analyze</a>
-          <a href="/quiz">quiz</a>
-          <a href="/profile">Dashboard</a>
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Sign Up</button>
+          <Link href={"/auth/signin"}><button className="login-btn">Login</button></Link>
+          <Link href={"/auth/signup"}><button className="signup-btn">Sign Up</button></Link>
         </nav>
       </header>
 
@@ -59,7 +56,7 @@ export default function Home() {
               />
             </div>
             <button className="analyze-btn">
-              Analyze
+            <Link href={"/auth/signup"}><div className="signup-btn">Analyze</div></Link>
               <ArrowRight size={20} />
             </button>
           </div>

@@ -50,7 +50,7 @@ const Signup = () => {
           <button className="form-btn" type="submit">Sign Up</button>
         </form>
         <p className="sign-up-label">
-          Already have an account? <Link href="/signin"><span className="sign-up-link">Sign in</span></Link>
+          Already have an account? <Link href="/auth/signin"><span className="sign-up-link">Sign in</span></Link>
           
         </p>
         <div className="buttons-container">

@@ -11,12 +11,10 @@ const navbar = () => {
         <span>TruthSeeker</span>
         </div>
         <nav>
-            <a href="/" className="active">Home</a>
-            <a href="/main_page">Analyze</a>
-            <a href="/quiz">Quiz</a>
-            <a href="/profile">Dashboard</a>
-            <button className="login-btn">Login</button>
-            <button className="signup-btn">Sign Up</button>
+            <Link href="/" className="active">Home</Link>
+            <Link href="/main_page">Analyze</Link>
+            <Link href="/quiz">Quiz</Link>
+            <Link href="/user_reporting">User Reporting</Link>
         </nav>
   </header>
   )

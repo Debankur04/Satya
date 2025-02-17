@@ -3,7 +3,8 @@ import "./style.css";
 
 // pages/partnerships.js
 import { useState } from 'react';
-import { Shield, Database, FileCheck, Send } from 'lucide-react';
+import { Shield, Database, FileCheck, Send, AlertCircle } from 'lucide-react';
+import Link from "next/link";
 
 export default function PartnershipPage() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,21 @@ export default function PartnershipPage() {
   };
 
   return (
+    <div>
+    <div className="header">
+        <div className="logo">
+        <AlertCircle size={24} />
+        <span>Satya</span>
+        </div>
+        <nav>
+            <Link href="/main_page">Analyze</Link>
+            <Link href="/quiz">Quiz</Link>
+            <Link href="/user_reporting">User Reporting</Link>
+            <Link href="/profile">Profile</Link>
+        </nav>
+  </div>
     <div className="container">
+      
       <header>
         <h1>Fact-Checking Partnerships</h1>
         <p>Powering AI with verified truth</p>
@@ -106,6 +121,7 @@ export default function PartnershipPage() {
           <button type="submit">Submit Request</button>
         </form>
       </section>
+    </div>
     </div>
   );
 }
