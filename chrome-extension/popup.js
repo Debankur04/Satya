@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   async function checkFactsForArticle(articleData) {
     const API_KEY = 'YOUR_GOOGLE_FACT_CHECK_API_KEY';
-    const url = `https://factchecktools.googleapis.com/v1alpha1/claims:search?key=AIzaSyDG82I80veM6bSIee4lpL9k6ej-HFK6njE&query=${encodeURIComponent(articleData.title)}`;
+    const url = `https://factchecktools.googleapis.com/v1alpha1/claims:search?key={Api_Key}&query=${encodeURIComponent(articleData.title)}`;
   
     try {
       const response = await fetch(url);
