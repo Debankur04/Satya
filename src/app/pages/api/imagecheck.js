@@ -65,8 +65,8 @@ export default async function handler(req, res) {
 }
 
 async function checkSightengine(imageUrl) {
-  const SIGHTENGINE_API_USER = process.env.SIGHTENGINE_API_USER;
-  const SIGHTENGINE_API_SECRET = process.env.SIGHTENGINE_API_SECRET;
+  const SIGHTENGINE_API_USER = process.env.NEXT_PUBLIC_FIREBASE_SIGHTENGINE_USER;
+  const SIGHTENGINE_API_SECRET = process.env.NEXT_PUBLIC_FIREBASE_SIGHTENGINE_SECRET;
 
   const response = await axios.get('https://api.sightengine.com/1.0/check.json', {
     params: {
@@ -83,7 +83,7 @@ async function checkSightengine(imageUrl) {
 }
 
 async function checkReplicate(imageUrl) {
-  const REPLICATE_API_TOKEN = process.env.REPLICATE_API_TOKEN;
+  const REPLICATE_API_TOKEN = process.env.NEXT_PUBLIC_FIREBASE_REPLICATE_API_KEY;
   
   // First, download the image to get its base64
   const imageResponse = await axios.get(imageUrl, { responseType: 'arraybuffer' });
@@ -118,28 +118,7 @@ async function checkReplicate(imageUrl) {
   };
 }
 
-async function checkGoogleReverseImage(imageUrl) {
-  const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
-  const SEARCH_ENGINE_ID = process.env.GOOGLE_SEARCH_ENGINE_ID;
 
-  const response = await axios.get(
-    `https://www.googleapis.com/customsearch/v1`,
-    {
-      params: {
-        key: GOOGLE_API_KEY,
-        cx: SEARCH_ENGINE_ID,
-        searchType: 'image',
-        q: imageUrl
-      }
-    }
-  );
-
-  // Analyze search results to determine if image is suspicious
-  const results = response.data.items || [];
-  const suspicious = analyzeSearchResults(results);
-
-  return { suspicious };
-}
 
 function analyzeSearchResults(results) {
   if (results.length === 0) {

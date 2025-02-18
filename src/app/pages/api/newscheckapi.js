@@ -36,8 +36,8 @@ export default async function handler(req, res) {
       ""
 
     // 2. Call Google Fact Check API
-    const GOOGLE_FACT_CHECK_API_KEY = process.env.GOOGLE_FACT_CHECK_API_KEY
-    const factCheckUrl = `https://factchecktools.googleapis.com/v1alpha1/claims:search?key=${NEXT_PUBLIC_FIREBASE_GOOGLE_FACT_CHECK_API_KEY}&query=${encodeURIComponent(
+    const GOOGLE_FACT_CHECK_API_KEY = process.env.NEXT_PUBLIC_FIREBASE_GOOGLE_FACT_CHECK_API_KEY
+    const factCheckUrl = `https://factchecktools.googleapis.com/v1alpha1/claims:search?key=${GOOGLE_FACT_CHECK_API_KEY}&query=${encodeURIComponent(
       pageTitle
     )}`
 

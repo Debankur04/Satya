@@ -118,8 +118,8 @@ async function checkFacePlusPlus(videoBuffer) {
 }
 
 async function pollForResults(taskId) {
-  const FACEPP_API_KEY = process.env.FACEPP_API_KEY;
-  const FACEPP_API_SECRET = process.env.FACEPP_API_SECRET;
+  const FACEPP_API_KEY = process.env.NEXT_PUBLIC_FIREBASE_FACEPP_API_KEY;
+  const FACEPP_API_SECRET = process.env.NEXT_PUBLIC_FIREBASE_FACEPP_API_SECRET;
   const CHECK_ENDPOINT = 'https://api-us.faceplusplus.com/facepp/v3/video/getResult';
 
   let attempts = 0;
